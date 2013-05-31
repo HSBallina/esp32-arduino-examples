@@ -16,12 +16,11 @@ Created 3/9/13 by HSBallina (http://about.me/hsballina)
 // SCLK, DIN, D_C, CS, RST
 Adafruit_PCD8544 display = Adafruit_PCD8544(7, 6, 5, 4, 3);
 
-#define _W 30
-#define _SIZE 4
-#define _BASEX 85
-#define _BASEY 5
-#define _NUMOFCHARS 14
-#define _SPEED 2
+#define _SIZE 4 // Char size
+#define _BASEX 85 // Where to start drawing
+#define _BASEY 5 // Where to start drawing
+#define _NUMOFCHARS 14 // No of chars in string (for knowing when to wrap)
+#define _SPEED 2 // Scroll speed
 
 void setup(){
   Serial.begin(9600); // Console
