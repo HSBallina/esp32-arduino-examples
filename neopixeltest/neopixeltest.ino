@@ -17,7 +17,7 @@
 
 // Which pin on the Arduino is connected to the NeoPixels?
 // On a Trinket or Gemma we suggest changing this to 1:
-#define LED_PIN    6
+#define LED_PIN    3
 
 // How many NeoPixels are attached to the Arduino?
 #define LED_COUNT 62
@@ -46,7 +46,9 @@ void setup() {
 
   strip.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
   strip.show();            // Turn OFF all pixels ASAP
-  strip.setBrightness(50); // Set BRIGHTNESS to about 1/5 (max = 255)
+  strip.setBrightness(100); // Set BRIGHTNESS to about 1/5 (max = 255)
+
+  //pinMode(LED_BUILTIN, OUTPUT);
 }
 
 
@@ -54,8 +56,10 @@ void setup() {
 
 void loop() {
   // Fill along the length of the strip in various colors...
+    //digitalWrite(LED_BUILTIN, HIGH);
   colorWipe(strip.Color(255,   0,   0), 50); // Red
   colorWipe(strip.Color(  0, 255,   0), 50); // Green
+    //digitalWrite(LED_BUILTIN, LOW);
   colorWipe(strip.Color(  0,   0, 255), 50); // Blue
 
   // Do a theater marquee effect in various colors...
